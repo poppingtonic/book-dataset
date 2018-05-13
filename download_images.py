@@ -34,7 +34,7 @@ print('[Download images into "{}"]'.format(args.output_dirpath))
 def download_image(i):
     filename = csv.iloc[i]['Filename']
     category = csv.iloc[i]['Category ID']
-    inner_output_dirpath = os.path.join(args.output_dirpath, category)
+    inner_output_dirpath = os.path.join(args.output_dirpath, str(category))
     if not os.path.isdir(inner_output_dirpath):
         os.mkdir(inner_output_dirpath)
     output_filepath = os.path.join(inner_output_dirpath, filename)
