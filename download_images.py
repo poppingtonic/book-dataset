@@ -36,7 +36,7 @@ def download_image(i):
     category = csv.iloc[i]['Category ID']
     inner_output_dirpath = os.path.join(args.output_dirpath, str(category))
     if not os.path.isdir(inner_output_dirpath):
-        os.mkdir(inner_output_dirpath)
+        os.mkdir(inner_output_dirpath, exist_ok=True)
     output_filepath = os.path.join(inner_output_dirpath, filename)
 
     url = csv.iloc[i]['Image URL']
